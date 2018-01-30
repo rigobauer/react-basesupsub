@@ -1,14 +1,29 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
 
-import Example from '../../src'
+import BaseSupSub from '../../src'
+
+import './index.css'
 
 class Demo extends Component {
+
   render() {
-    return <div>
-      <h1>react-basesupsub Demo</h1>
-      <Example/>
-    </div>
+
+    const example = { base: 10, sup: 2, sub: 8 },
+          styleExample = { color: 'blue', fontSize: '60px' }
+
+    return (
+      <div style={{ fontSize: '30px' }} >
+        <h3>react-basesupsub Demo</h3>
+        <BaseSupSub base="Test" sup="superscript" sub="subscript" style={styleExample} />
+        <br/>
+        <BaseSupSub {...example} />
+        <br/>
+        <BaseSupSub base="JustBaseline" className='testing red strong' />
+        <br/>
+        <div>This is just a test <BaseSupSub {...example} style={styleExample} /> to check inline behaviour</div>
+      </div>
+    )
   }
 }
 

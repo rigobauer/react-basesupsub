@@ -1,16 +1,12 @@
 # react-basesupsub
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+Simple component to render an element made by baseline, superscript and subscript (WORK IN PROGRESS).
 
-Describe react-basesupsub here.
+## Usage
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
-
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
-
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+```js
+<BaseSupSub base="mybase" sup="mysuperscript" sub="mysubscript" />
+<BaseSupSub base={10} sup={2} sub="something" />
+<BaseSupSub base={10} sup={2} sub="something" className="myclass1 myclass2" />
+<BaseSupSub base={10} sup={2} sub="something" style={{ color: 'red', fontSize: '30px' }} />
+```
