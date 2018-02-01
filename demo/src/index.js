@@ -13,11 +13,13 @@ class Demo extends Component {
           styleExample = { color: 'blue', fontSize: '60px' }
 
     return (
-      <div style={{ fontSize: '30px' }} >
-        <h3>react-basesupsub Demo</h3>
+      <div style={{ fontSize: '20px' }} >
+        <h1>react-basesupsub Demo</h1>
         <BaseSupSub base="Test" sup="superscript" sub="subscript" style={styleExample} />
         <br/>
         <BaseSupSub {...example} />
+        <br/>
+        <BaseSupSub base="" sup="superscript" sub="subscript" />
         <br/>
         <BaseSupSub base="JustBaseline" className='testing red strong' />
         <br/>

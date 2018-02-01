@@ -1,6 +1,6 @@
 # react-basesupsub
 
-Simple component to render an element made by baseline, superscript and subscript (WORK IN PROGRESS).
+Simple component to render an element composed by baseline, superscript and subscript (**WORK IN PROGRESS**).
 
 ## Usage
 

@@ -6,13 +6,10 @@ const BaseSupSub = (props) => {
   const { base, sup, sub, className, style } = props
 
   const coverStyles = {
+    fontSize: '1em',
     display: 'flex',
     flexFlow: 'row nowrap',
     alignItems: 'stretch'
-  }
-
-  const baseStyles = {
-    fontSize: '1em'
   }
 
   const supsubStyles = {
@@ -23,24 +20,26 @@ const BaseSupSub = (props) => {
     paddingLeft: '0.1em'
   }
 
-  return (
+  return (base ? (
     <div
       {...{className}}
       style={{ ...style, display: 'inline-block' }}
     >
-      <div style={coverStyles} >
-        <div style={baseStyles} >
-          {base}
-        </div>
-        {(sup !== '' || sub !== '') &&
+      {(sup || sub) ? (
+        <div style={coverStyles} >
+          <div>{base}</div>
           <div style={supsubStyles} >
             <div>{sup}</div>
             <div>{sub}</div>
           </div>
-        }
-      </div>
+        </div>
+      ) :
+        base
+      }
     </div>
-  )
+  ) : (
+    null
+  ))
 }
 
 BaseSupSub.propTypes = {
