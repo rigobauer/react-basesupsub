@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import styles from './index.css'
+
 const BaseSupSub = (props) => {
 
-  const { base, sup, sub, style, ...otherProps } = props
+  const { base, sup, sub, className, ...otherProps } = props
 
   const coverStyles = {
     fontSize: '1em',
@@ -22,8 +24,8 @@ const BaseSupSub = (props) => {
 
   return (base ? (
     <div
+      className={ styles.dinlineblock + (className ? ' ' + className : '')}
       {...otherProps}
-      style={{ ...style, display: 'inline-block' }}
     >
       {(sup || sub) ? (
         <div style={coverStyles} >

@@ -21,7 +21,9 @@ class Demo extends Component {
         <br/>
         <BaseSupSub base="" sup="superscript" sub="subscript" />
         <br/>
-        <BaseSupSub base="JustBaseline" className='testing red strong' />
+        <BaseSupSub base="JustBaseline" className='testing red strong border' />
+        <br/>
+        <BaseSupSub base="JustBaseline" className='dblock red strong border' />
         <br/>
         <div>This is just a test <BaseSupSub {...example} style={styleExample} /> to check inline behaviour</div>
       </div>

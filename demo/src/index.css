@@ -1,2 +1,4 @@
 .red { color: red; }
 .strong { font-weight: bold; }
+.dblock { display: block; }
+.border { border: 1px solid black; }
