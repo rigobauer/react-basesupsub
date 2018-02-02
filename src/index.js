@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const BaseSupSub = (props) => {
 
-  const { base, sup, sub, className, style } = props
+  const { base, sup, sub, style, ...otherProps } = props
 
   const coverStyles = {
     fontSize: '1em',
@@ -22,7 +22,7 @@ const BaseSupSub = (props) => {
 
   return (base ? (
     <div
-      {...{className}}
+      {...otherProps}
       style={{ ...style, display: 'inline-block' }}
     >
       {(sup || sub) ? (
