@@ -13,10 +13,29 @@ Simple component to render an element composed by baseline, superscript and subs
 
 ```js
 <BaseSupSub base="mybase" sup="mysuperscript" sub="mysubscript" />
+
 <BaseSupSub base={10} sup={2} sub="something" />
-<BaseSupSub base={10} sup={2} sub="something" className="myclass1 myclass2" />
-<BaseSupSub base={10} sup={2} sub="something" style={{ color: 'red', fontSize: '30px' }} />
-<BaseSupSub base={10} sup={2} sub="something" style={{ color: 'red', fontSize: '30px', display: 'block' }} />
+
+<BaseSupSub
+  base={10}
+  sup={2}
+  sub="something"
+  className="myclass1 myclass2"
+/>
+
+<BaseSupSub
+  base={10}
+  sup={2}
+  sub="something"
+  style={{ color: 'red', fontSize: '30px' }}
+/>
+
+<BaseSupSub
+  base={10}
+  sup={2}
+  sub="something"
+  style={{ color: 'red', fontSize: '30px', display: 'block' }}
+/>
 ```
 
 ## Notes
