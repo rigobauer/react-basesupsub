@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow, mount, render } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { expect } from 'chai'
 import sinon from 'sinon'
 
@@ -63,6 +63,19 @@ describe('<BaseSupSub />', () => {
     const wrapper = shallow(<BaseSupSub style={{ display: 'block' }} base="baseline" sup="superscript" sub="subscript" />)
     expect(wrapper.prop('style').display)
       .to.deep.equal('block')
+  })
+
+  it('should mounts <Abc2SvgDrums /> with a simple abcNotation', () => {
+    sinon.spy(BaseSupSub.prototype, 'render')
+    const wrapper = mount(<BaseSupSub base="baseline" sup="superscript" sub="subscript" />)
+    expect(BaseSupSub.prototype.render.callCount)
+      .to.equal(1)
+    wrapper.setProps({ base: 'baseline', sup: 'superscript', sub: 'subscript' })
+    expect(BaseSupSub.prototype.render.callCount)
+      .to.equal(1)
+    wrapper.setProps({ base: 'newbaseline', sup: 'superscript', sub: 'subscript' })
+    expect(BaseSupSub.prototype.render.callCount)
+      .to.equal(2)
   })
 
 })
