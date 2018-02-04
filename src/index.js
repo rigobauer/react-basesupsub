@@ -19,46 +19,34 @@ const supsubStyles = {
 }
 
 class BaseSupSub extends PureComponent {
-
   render() {
     const { base, sup, sub, className, ...otherProps } = this.props
-  
-    return (base ? (
+
+    return base ? (
       <div
-        className={ styles.dinlineblock + (className ? ' ' + className : '')}
+        className={styles.dinlineblock + (className ? ' ' + className : '')}
         {...otherProps}
       >
-        {(sup || sub) ? (
-          <div style={coverStyles} >
+        {sup || sub ? (
+          <div style={coverStyles}>
             <div>{base}</div>
-            <div style={supsubStyles} >
+            <div style={supsubStyles}>
               <div>{sup}</div>
               <div>{sub}</div>
             </div>
           </div>
-        ) :
+        ) : (
           base
-        }
+        )}
       </div>
-    ) : (
-      null
-    ))
+    ) : null
   }
 }
 
 BaseSupSub.propTypes = {
-  base: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]).isRequired,
-  sup: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
-  sub: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ])
+  base: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  sup: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  sub: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
 
 BaseSupSub.defaultProps = {

@@ -4,12 +4,7 @@
   "description": "react-basesupsub React component",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
+  "files": ["css", "es", "lib", "umd"],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -19,7 +14,14 @@
     "test:watch": "nwb test-react --server",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release",
-    "cm": "git-cz"
+    "cm": "git-cz",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --single-quote --no-semi --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "prop-types": "^15.6.0"
@@ -33,7 +35,10 @@
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "husky": "^0.15.0-rc.3",
+    "lint-staged": "^6.1.0",
     "nwb": "0.21.x",
+    "prettier": "1.10.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "semantic-release": "^12.4.1",
@@ -47,11 +52,7 @@
     "type": "git",
     "url": "https://github.com/rigobauer/react-basesupsub.git"
   },
-  "keywords": [
-    "react-component",
-    "superscript",
-    "subscript"
-  ],
+  "keywords": ["react-component", "superscript", "subscript"],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
