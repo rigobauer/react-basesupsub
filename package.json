@@ -14,8 +14,12 @@
     "test:watch": "nwb test-react --server",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release",
-    "cm": "git-cz",
-    "precommit": "lint-staged"
+    "cm": "git-cz"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,json,css,md}": [
